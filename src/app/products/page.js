@@ -2,6 +2,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Products() {
   const products = [
@@ -52,7 +54,7 @@ export default function Products() {
             key={idx}
             className="hover:scale-105 transition-transform duration-300 overflow-hidden"
           >
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className="w-full h-48 object-cover"

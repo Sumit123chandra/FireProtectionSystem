@@ -14,7 +14,7 @@ export default function Dashboard() {
     } else {
       fetchMessages();
     }
-  }, []);
+  }, [router]);
 
   const fetchMessages = async () => {
     try {

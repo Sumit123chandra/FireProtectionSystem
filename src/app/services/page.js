@@ -3,6 +3,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
+
 
 // export const metadata = {
 //   title: "Our Services | KC Fire Protection System",
@@ -82,7 +84,7 @@ export default function Services() {
             key={idx}
             className="hover:scale-105 transition-transform duration-300 overflow-hidden"
           >
-            <img
+            <Image
               src={service.image}
               alt={service.title}
               className="w-full h-48 object-cover"

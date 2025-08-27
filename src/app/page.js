@@ -181,28 +181,28 @@ export default function Home() {
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {/* Example Item */}
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services1.jpeg" alt="Gas Suppression System" className="w-full h-48 object-cover"/>
+      <Image src="/images/services1.jpeg" alt="Gas Suppression System" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Gas Suppression System</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services2.jpeg" alt="Fire Detection System" className="w-full h-48 object-cover"/>
+      <Image src="/images/services2.jpeg" alt="Fire Detection System" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Detection System</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services3.jpeg" alt="Fire Sprinkler System" className="w-full h-48 object-cover"/>
+      <Image src="/images/services3.jpeg" alt="Fire Sprinkler System" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Sprinkler System</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services4.jpeg" alt="Fire Hydrant System" className="w-full h-48 object-cover"/>
+      <Image src="/images/services4.jpeg" alt="Fire Hydrant System" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Hydrant System</h3>
       </div>
@@ -210,28 +210,28 @@ export default function Home() {
 
     {/* Add more items below */}
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services5.jpeg" alt="Fire Protection System" className="w-full h-48 object-cover"/>
+      <Image src="/images/services5.jpeg" alt="Fire Protection System" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Protection System</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services6.jpeg" alt="Fire Audit Training and Maintainence" className="w-full h-48 object-cover"/>
+      <Image src="/images/services6.jpeg" alt="Fire Audit Training and Maintainence" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Audit Training and Maintainence</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services7.jpeg" alt="Fire system repair and upgradation" className="w-full h-48 object-cover"/>
+      <Image src="/images/services7.jpeg" alt="Fire system repair and upgradation" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Fire system repair and upgradation</h3>
       </div>
     </div>
 
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-      <img src="/images/services8.jpeg" alt="Technical Manpower Services" className="w-full h-48 object-cover"/>
+      <Image src="/images/services8.jpeg" alt="Technical Manpower Services" className="w-full h-48 object-cover"/>
       <div className="p-4 text-left">
         <h3 className="text-lg font-bold text-gray-800 mt-1">Technical Manpower Services</h3>
       </div>
@@ -261,16 +261,16 @@ export default function Home() {
 
   <div className="flex flex-wrap justify-center items-center gap-8">
     <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
-      <img src="/images/client1.png" alt="Client 1" className="h-16 md:h-20 object-contain" />
+      <Image src="/images/client1.png" alt="Client 1" className="h-16 md:h-20 object-contain" />
     </div>
     <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
-      <img src="/images/client2.png" alt="Client 2" className="h-16 md:h-20 object-contain" />
+      <Image src="/images/client2.png" alt="Client 2" className="h-16 md:h-20 object-contain" />
     </div>
     <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
-      <img src="/images/client3.png" alt="Client 3" className="h-16 md:h-20 object-contain" />
+      <Image src="/images/client3.png" alt="Client 3" className="h-16 md:h-20 object-contain" />
     </div>
     <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
-      <img src="/images/client4.png" alt="Client 4" className="h-16 md:h-20 object-contain" />
+      <Image src="/images/client4.png" alt="Client 4" className="h-16 md:h-20 object-contain" />
     </div>
     <div className="flex flex-col items-center">
       <h3 className="text-gray-700 font-medium text-sm md:text-base">
