@@ -1,103 +1,285 @@
+"use client";
+
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 import Image from "next/image";
+import React, { createContext } from "react";
+
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="space-y-20 pt-24">
+      {/* Hero Section */}
+      <Swiper
+  modules={[Autoplay]}
+  autoplay={{ delay: 5000, disableOnInteraction: false }}
+  loop={true}
+>
+  <SwiperSlide>
+    <section
+      className="relative text-center py-28 bg-cover bg-center text-white rounded-2xl shadow-xl"
+      style={{ backgroundImage: "url('/images/hero1.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          Protecting Lives, Preserving Futures
+        </h1>
+        <p className="text-xl mt-6">
+          Trusted fire safety for industries, businesses & homes
+        </p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-block bg-white text-red-700 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100"
+        >
+          Get a Consultation
+        </Link>
+      </div>
+    </section>
+  </SwiperSlide>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  <SwiperSlide>
+    <section
+      className="relative text-center py-28 bg-cover bg-center text-white rounded-2xl shadow-xl"
+      style={{ backgroundImage: "url('/images/hero2.jpeg')" }}
+    >
+      <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          From Concept to Commissioning, We’ve Got You Covered
+        </h1>
+        <p className="text-xl mt-6">
+          Seamless solutions from design to maintenance
+        </p>
+        <Link
+          href="/services"
+          className="mt-6 inline-block bg-white text-red-700 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          View Services
+        </Link>
+      </div>
+    </section>
+  </SwiperSlide>
+
+  <SwiperSlide>
+    <section
+      className="relative text-center py-28 bg-cover bg-center text-white rounded-2xl shadow-xl"
+      style={{ backgroundImage: "url('/images/hero3.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          From Concept to Commissioning, We’ve Got You Covered
+        </h1>
+        <p className="text-xl mt-6">
+          Seamless solutions from design to maintenance
+        </p>
+        <Link
+          href="/services"
+          className="mt-6 inline-block bg-white text-red-700 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          View Services
+        </Link>
+      </div>
+    </section>
+  </SwiperSlide>
+
+  <SwiperSlide>
+    <section
+      className="relative text-center py-28 bg-cover bg-center text-white rounded-2xl shadow-xl"
+      style={{ backgroundImage: "url('/images/hero4.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          From Concept to Commissioning, We’ve Got You Covered
+        </h1>
+        <p className="text-xl mt-6">
+          Seamless solutions from design to maintenance
+        </p>
+        <Link
+          href="/services"
+          className="mt-6 inline-block bg-white text-red-700 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          View Services
+        </Link>
+      </div>
+    </section>
+  </SwiperSlide>
+</Swiper>
+
+
+      {/* Stats Section */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-16">
+  <Card className="hover:scale-105 transition-transform duration-300 bg-red-50">
+    <CardContent className="p-8">
+      <h3 className="text-4xl md:text-5xl font-extrabold text-red-700">600+</h3>
+      <p className="text-gray-700 mt-2 text-lg">Clients</p>
+    </CardContent>
+  </Card>
+
+  <Card className="hover:scale-105 transition-transform duration-300 bg-red-50">
+    <CardContent className="p-8">
+      <h3 className="text-4xl md:text-5xl font-extrabold text-red-700">20+ Years</h3>
+      <p className="text-gray-700 mt-2 text-lg">Experience</p>
+    </CardContent>
+  </Card>
+
+  <Card className="hover:scale-105 transition-transform duration-300 bg-red-50">
+    <CardContent className="p-8">
+      <h3 className="text-4xl md:text-5xl font-extrabold text-red-700">500+</h3>
+      <p className="text-gray-700 mt-2 text-lg">Projects Delivered</p>
+    </CardContent>
+  </Card>
+</section>
+
+
+      {/* Why Choose Us */}
+      <section className="text-center py-16 bg-red-50 rounded-2xl px-6 md:px-20">
+  <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-6">
+    Why Choose KC Fire Protection?
+  </h2>
+  <p className="text-gray-700 max-w-3xl mx-auto text-lg">
+    Licensed experts for fire prevention and life safety, authorized by the Fire Department.  
+    Certified Fire System Auditors with proven expertise across residential, commercial, and industrial sectors.
+  </p>
+
+  <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+      <span className="text-red-600 text-2xl mt-1">✔️</span>
+      <p className="text-gray-700 font-medium">Certified Fire Safety Professionals</p>
+    </div>
+    <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+      <span className="text-red-600 text-2xl mt-1">✔️</span>
+      <p className="text-gray-700 font-medium">End-to-End Fire Protection Solutions</p>
+    </div>
+    <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+      <span className="text-red-600 text-2xl mt-1">✔️</span>
+      <p className="text-gray-700 font-medium">Preventive Maintenance & Audits</p>
+    </div>
+    <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+      <span className="text-red-600 text-2xl mt-1">✔️</span>
+      <p className="text-gray-700 font-medium">Advanced Fire Detection Systems</p>
+    </div>
+    <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+      <span className="text-red-600 text-2xl mt-1">✔️</span>
+      <p className="text-gray-700 font-medium">24/7 Customer Support</p>
+    </div>
+  </div>
+</section>
+
+
+      {/* Services Preview */}
+      <section className="text-center py-16">
+  <h2 className="text-3xl font-bold text-red-700 mb-10">Our Services & Projects</h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    {/* Example Item */}
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services1.jpeg" alt="Gas Suppression System" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Gas Suppression System</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services2.jpeg" alt="Fire Detection System" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Detection System</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services3.jpeg" alt="Fire Sprinkler System" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Sprinkler System</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services4.jpeg" alt="Fire Hydrant System" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Hydrant System</h3>
+      </div>
+    </div>
+
+    {/* Add more items below */}
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services5.jpeg" alt="Fire Protection System" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Protection System</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services6.jpeg" alt="Fire Audit Training and Maintainence" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire Audit Training and Maintainence</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services7.jpeg" alt="Fire system repair and upgradation" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Fire system repair and upgradation</h3>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+      <img src="/images/services8.jpeg" alt="Technical Manpower Services" className="w-full h-48 object-cover"/>
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-bold text-gray-800 mt-1">Technical Manpower Services</h3>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div className="mt-10">
+    <Link
+      href="/services"
+      className="bg-red-600 text-white px-6 py-3 rounded-xl shadow hover:bg-red-700 transition"
+    >
+      View All Services & Projects
+    </Link>
+  </div>
+</section>
+
+      {/* Client Section */}
+<section className="text-center py-16 bg-gray-50">
+  <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-4">
+    Trusted By
+  </h2>
+  <p className="text-gray-600 mb-10 text-lg max-w-2xl mx-auto">
+    Some of the top companies and industries rely on KC Fire Protection for their safety solutions
+  </p>
+
+  <div className="flex flex-wrap justify-center items-center gap-8">
+    <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+      <img src="/images/client1.png" alt="Client 1" className="h-16 md:h-20 object-contain" />
+    </div>
+    <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+      <img src="/images/client2.png" alt="Client 2" className="h-16 md:h-20 object-contain" />
+    </div>
+    <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+      <img src="/images/client3.png" alt="Client 3" className="h-16 md:h-20 object-contain" />
+    </div>
+    <div className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+      <img src="/images/client4.png" alt="Client 4" className="h-16 md:h-20 object-contain" />
+    </div>
+    <div className="flex flex-col items-center">
+      <h3 className="text-gray-700 font-medium text-sm md:text-base">
+        And 100+ companies & industries
+      </h3>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }
