@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://yourdomain.com";
+  const baseUrl = "https://fireprotection.netlify.app/";
 
   return [
     {
