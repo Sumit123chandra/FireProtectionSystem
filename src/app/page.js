@@ -8,11 +8,46 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import React, { createContext } from "react";
+import Head from "next/head";
 
 
 
 export default function Home() {
   return (
+    <>
+    <Head>
+        <title>KC Fire Protection System | Fire Safety Services in India</title>
+        <meta
+          name="description"
+          content="KC Fire Protection provides professional fire safety services including alarms, suppression systems, hydrants, and AMC for industries, businesses & homes."
+        />
+        <meta
+          name="keywords"
+          content="fire safety, fire protection, fire alarms, fire suppression, hydrants, AMC, KC Fire Protection"
+        />
+        <meta name="author" content="KC Fire Protection" />
+        <link rel="canonical" href="https://fireprotection.netlify.app/" />
+
+        {/* Google Verification */}
+        <meta
+          name="google-site-verification"
+          content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="KC Fire Protection System | Fire Safety Services in India" />
+        <meta property="og:description" content="Trusted fire safety solutions for industries, businesses & homes across India." />
+        <meta property="og:url" content="https://fireprotection.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fireprotection.netlify.app/images/hero1.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="KC Fire Protection System | Fire Safety Services in India" />
+        <meta name="twitter:description" content="Trusted fire safety solutions for industries, businesses & homes across India." />
+        <meta name="twitter:image" content="https://fireprotection.netlify.app/images/hero1.jpg" />
+      </Head>
+      
     <div className="space-y-20 pt-24">
       {/* Hero Section */}
       <Swiper
@@ -279,7 +314,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-
     </div>
+    </>
   );
 }
