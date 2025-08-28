@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://fireprotection.netlify.app/
+
+# Sitemaps
 Sitemap: https://fireprotection.netlify.app/sitemap.xml
