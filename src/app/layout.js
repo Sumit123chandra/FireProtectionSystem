@@ -24,6 +24,8 @@ export default function RootLayout({ children }) {
 
         <meta name="google-site-verification" content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4" />
 
+        <meta name="google-adsense-account" content="ca-pub-7164455649602046"></meta>
+
         {/* Open Graph */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
