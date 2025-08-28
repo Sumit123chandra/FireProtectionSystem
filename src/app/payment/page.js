@@ -58,7 +58,9 @@ export default function PaymentPage() {
         }).toString();
 
         // window.location.href = `/payment/receipt?${params}`;
+        // window.location.href = `/payment/receipt?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&amount=${encodeURIComponent(amount)}&paymentId=${encodeURIComponent(response.razorpay_payment_id)}`;
         window.location.href = `/payment/receipt?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&amount=${encodeURIComponent(amount)}&paymentId=${encodeURIComponent(response.razorpay_payment_id)}`;
+
 
       },
       theme: { color: "#ff0000" },
