@@ -30,6 +30,8 @@ export default function Home() {
 
         {/* Google Verification */}
         <meta name="google-site-verification" content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4" />
+
+        {/* Adsence Verification */}
         <meta name="google-adsense-account" content="ca-pub-7164455649602046"></meta>
 
         {/* Open Graph */}
