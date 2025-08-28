@@ -8,6 +8,6 @@ const ContactSchema = new mongoose.Schema({
   service: String,
   message: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
-});
+}, { timestamps: true });
 
 export default mongoose.models.Contact || mongoose.model("Contact", ContactSchema);
