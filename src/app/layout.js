@@ -6,6 +6,9 @@ import Head from "next/head";
 export const metadata = {
   title: "KC Fire Protection Site",
   description: "Professional Fire Protection Services",
+  verification: {
+    google: "oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4",
+  },
 };
 
 export default function RootLayout({ children }) {   
