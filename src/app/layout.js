@@ -50,6 +50,7 @@ export default function RootLayout({ children }) {
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "KC Fire Protection Site",
@@ -79,11 +80,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google AdSense */}
-        <script
-          async
-          data-ad-client="ca-pub-7164455649602046"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164455649602046"
+     crossorigin="anonymous"></Script>
       </head>
       <body className="bg-gray-50 text-gray-900">
         <Navbar />
