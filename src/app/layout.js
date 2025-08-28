@@ -19,6 +19,8 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://fireprotection.netlify.app/" />
 
+        <meta name="google-site-verification" content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4" />
+
         {/* Open Graph */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
