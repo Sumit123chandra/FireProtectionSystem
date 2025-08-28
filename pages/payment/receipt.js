@@ -1,10 +1,10 @@
 "use client";
 
-// import Navbar from "../../components/Layout"; // adjust path
+import Footer from "../../components/Layout"; // adjust path
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function ReceiptPage() {
