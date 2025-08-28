@@ -29,10 +29,7 @@ export default function Home() {
         <link rel="canonical" href="https://fireprotection.netlify.app/" />
 
         {/* Google Verification */}
-        <meta
-          name="google-site-verification"
-          content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4"
-        />
+        <meta name="google-site-verification" content="oOFGK6zzq9myGlUBaxjnfHfQDESoxi__DDSsU5uidT4" />
 
         {/* Open Graph */}
         <meta property="og:title" content="KC Fire Protection System | Fire Safety Services in India" />
@@ -47,7 +44,7 @@ export default function Home() {
         <meta name="twitter:description" content="Trusted fire safety solutions for industries, businesses & homes across India." />
         <meta name="twitter:image" content="https://fireprotection.netlify.app/images/hero1.jpg" />
       </Head>
-      
+
     <div className="space-y-20 pt-24">
       {/* Hero Section */}
       <Swiper

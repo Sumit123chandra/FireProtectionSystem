@@ -8,7 +8,7 @@ export const metadata = {
   description: "Professional Fire Protection Services",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }) {   
   return (
     <html lang="en">
       <Head>
