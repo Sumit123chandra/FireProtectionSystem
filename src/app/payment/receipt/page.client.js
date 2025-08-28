@@ -36,7 +36,9 @@ export default function ReceiptPage() {
         <div className="text-left space-y-3">
           <p><span className="font-semibold">Name:</span> {receipt.name}</p>
           <p><span className="font-semibold">Phone:</span> {receipt.phone}</p>
-          <p><span className="font-semibold">Amount Paid:</span> ₹{receipt.amount}</p>
+          {/* <p><span className="font-semibold">Amount Paid:</span> ₹{receipt.amount}</p> */}
+          <p><span className="font-semibold">Amount Paid:</span> ₹{Number(receipt.amount).toLocaleString()}</p>
+
           <p><span className="font-semibold">Payment ID:</span> {receipt.paymentId}</p>
           <p><span className="font-semibold">Date:</span> {receipt.date}</p>
         </div>
