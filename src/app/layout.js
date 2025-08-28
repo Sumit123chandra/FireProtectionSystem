@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Head from "next/head";
+import { Html, Head, Main, NextScript } from "next/document";
 
 export const metadata = {
   title: "KC Fire Protection Site",
