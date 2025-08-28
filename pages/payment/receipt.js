@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "../../components/Layout"; // adjust path
-import Footer from "../../components/Layout"; // adjust path
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
