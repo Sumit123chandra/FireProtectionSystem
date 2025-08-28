@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google AdSense */}
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164455649602046"
+        <Script async strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164455649602046"
      crossorigin="anonymous"></Script>
       </head>
       <body className="bg-gray-50 text-gray-900">
