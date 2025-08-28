@@ -5,6 +5,7 @@ import Navbar from "../../components/Layout"; // adjust path
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Footer";
 
 export default function ReceiptPage() {
   const router = useRouter();
