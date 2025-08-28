@@ -20,6 +20,9 @@ export default function AdminLogin() {
     const data = await res.json();
 
     if (data.success) {
+      // Save admin session
+      localStorage.setItem("admin", "true");
+
       router.push("/admin/dashboard");
     } else {
       setError("❌ Wrong password");

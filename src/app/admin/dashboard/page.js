@@ -40,6 +40,7 @@ export default function Dashboard() {
             <div key={msg._id} className="p-4 border rounded bg-white shadow">
               <p><strong>Name:</strong> {msg.name}</p>
               <p><strong>Email:</strong> {msg.email}</p>
+              <p><strong>Service:</strong> {msg.service}</p>
               <p><strong>Message:</strong> {msg.message}</p>
               <p className="text-sm text-gray-500">Received: {new Date(msg.createdAt).toLocaleString()}</p>
             </div>

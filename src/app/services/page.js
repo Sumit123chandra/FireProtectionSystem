@@ -96,7 +96,7 @@ export default function Services() {
                 href={`/contact?service=${encodeURIComponent(service.title)}`}
                 className="mt-4 inline-block text-red-700 font-semibold hover:underline"
               >
-                Inquire →
+                Enquire →
               </Link>
             </CardContent>
           </Card>
