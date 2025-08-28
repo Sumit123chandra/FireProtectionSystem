@@ -1,7 +1,11 @@
 "use client";
 
+import Navbar from "../../components/Layout"; // adjust path
+import Footer from "../../components/Layout"; // adjust path
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Footer from "@/components/Footer";
 
 export default function ReceiptPage() {
   const router = useRouter();
@@ -28,6 +32,8 @@ export default function ReceiptPage() {
   }, [router.isReady, router.query]);
 
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
       <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md text-center">
         <h1 className="text-3xl font-bold text-red-700 mb-6">Payment Receipt</h1>
@@ -48,5 +54,7 @@ export default function ReceiptPage() {
         </button>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
