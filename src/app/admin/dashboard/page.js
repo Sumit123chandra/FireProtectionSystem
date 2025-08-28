@@ -18,7 +18,8 @@ export default function Dashboard() {
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch("/api/contact");
+    //   const res = await fetch("/api/contact");
+    const res = await fetch("/.netlify/functions/contact");
       const data = await res.json();
       if (data.success) {
         setMessages(data.data);
