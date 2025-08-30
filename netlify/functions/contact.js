@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+/*import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 import Contact from "../../src/models/Contact.js"; 
 import { dbConnect } from "../../src/lib/dbConnect.js";
@@ -14,19 +14,24 @@ export async function handler(event, context) {
   try {
     const data = JSON.parse(event.body);
 
-    // Setup transporter (Gmail SMTP in this case)
+    // --- Connect to MongoDB ---
+    await dbConnect();
+
+    // --- Save to MongoDB ---
+    const newMessage = await Contact.create(data);
+
+    // --- Send email notification ---
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your Gmail address
-        pass: process.env.EMAIL_PASS, // App password (not your Gmail password)
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Mail options
     const mailOptions = {
       from: `"KC Fire Protection" <${process.env.EMAIL_USER}>`,
-      to: process.env.RECEIVER_EMAIL, // where you want to receive messages
+      to: process.env.RECEIVER_EMAIL,
       subject: `New Contact Form Submission from ${data.name}`,
       text: `
         Name: ${data.name}
@@ -37,18 +42,113 @@ export async function handler(event, context) {
       `,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, message: "Message sent successfully!" }),
+      body: JSON.stringify({ success: true, message: "Message saved & sent!", data: newMessage }),
     };
+
   } catch (error) {
-    console.error("Email(Netlify) send error:", error);
+    console.error("Netlify handler error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ success: false, message: "Server Error. Could not send email(Netlify)." }),
+      body: JSON.stringify({ success: false, message: "Server Error (Netlify)." }),
     };
   }
+}
+*/
+
+// netlify/functions/contact.js
+import mongoose from "mongoose";
+import nodemailer from "nodemailer";
+import Contact from "../../src/models/Contact.js";
+import { dbConnect } from "../../src/lib/dbConnect.js";
+
+export async function handler(event, context) {
+  // ✅ Handle POST (Save + Email)
+  if (event.httpMethod === "POST") {
+    try {
+      const data = JSON.parse(event.body);
+
+      // --- Connect to MongoDB ---
+      await dbConnect();
+
+      // --- Save to MongoDB ---
+      const newMessage = await Contact.create(data);
+
+      // --- Send email notification ---
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      const mailOptions = {
+        from: `"KC Fire Protection" <${process.env.EMAIL_USER}>`,
+        to: process.env.RECEIVER_EMAIL,
+        subject: `New Contact Form Submission from ${data.name}`,
+        text: `
+          Name: ${data.name}
+          Phone: ${data.phone}
+          Email: ${data.email}
+          Service: ${data.service}
+          Message: ${data.message}
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          success: true,
+          message: "Message saved & sent!",
+          data: newMessage,
+        }),
+      };
+    } catch (error) {
+      console.error("Netlify POST error:", error);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          success: false,
+          message: "Server Error (Netlify POST).",
+        }),
+      };
+    }
+  }
+
+  // ✅ Handle GET (Fetch all messages for Dashboard)
+  if (event.httpMethod === "GET") {
+    try {
+      await dbConnect();
+      const messages = await Contact.find().sort({ createdAt: -1 });
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          success: true,
+          data: messages,
+        }),
+      };
+    } catch (error) {
+      console.error("Netlify GET error:", error);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          success: false,
+          message: "Server Error (Netlify GET).",
+        }),
+      };
+    }
+  }
+
+  // ✅ Method not allowed fallback
+  return {
+    statusCode: 405,
+    body: JSON.stringify({ success: false, message: "Method Not Allowed" }),
+  };
 }

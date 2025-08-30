@@ -58,13 +58,22 @@ export async function POST(req) {
     );
   }
 }
-
 export async function GET() {
   try {
+    // 1. Connect to MongoDB
     await dbConnect();
+
+    // 2. Fetch all Contact documents, sorted newest first
     const messages = await Contact.find().sort({ createdAt: -1 });
+
+    // 3. Return as JSON with 200 OK
     return NextResponse.json({ success: true, data: messages });
   } catch (error) {
-    return NextResponse.json({ success: false, error: "Failed to fetch messages" }, { status: 500 });
+    // 4. On error, return 500 + error message
+    return NextResponse.json(
+      { success: false, error: "Failed to fetch messages" },
+      { status: 500 }
+    );
   }
 }
+

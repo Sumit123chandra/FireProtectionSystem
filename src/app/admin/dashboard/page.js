@@ -18,8 +18,14 @@ export default function Dashboard() {
 
   const fetchMessages = async () => {
     try {
+        const endpoint =
+      process.env.NEXT_PUBLIC_HOSTING === "vercel"
+        ? "/api/contact"
+        : "/.netlify/functions/contact";
+
     //   const res = await fetch("/api/contact");
-    const res = await fetch("/.netlify/functions/contact");
+    // const res = await fetch("/.netlify/functions/contact");
+      const res = await fetch("endpoint");
       const data = await res.json();
       if (data.success) {
         setMessages(data.data);
