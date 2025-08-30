@@ -35,8 +35,15 @@ export default function ContactForm() {
     setStatus("Sending...");
 
     try {
+
+        const endpoint =
+        process.env.NEXT_PUBLIC_HOSTING === "vercel"
+            ? "/api/contact"
+            : "/.netlify/functions/contact";
+
     //   const res = await fetch("/api/contact", {
-        const res = await fetch("/.netlify/functions/contact", {
+        // const res = await fetch("/.netlify/functions/contact", {
+        const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -56,7 +63,7 @@ export default function ContactForm() {
         setStatus("❌ Failed to send message.");
       }
     } catch (err) {
-      setStatus("❌ Server error. Try again later.");
+      setStatus("❌ Sorry for the inconvenience, message could not be sent. Please Contact through Phone No.");
     }
   };
 

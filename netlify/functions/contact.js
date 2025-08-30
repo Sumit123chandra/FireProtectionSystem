@@ -1,4 +1,7 @@
+import mongoose from "mongoose";
 import nodemailer from "nodemailer";
+import Contact from "../../src/models/Contact.js"; 
+import { dbConnect } from "../../src/lib/dbConnect.js";
 
 export async function handler(event, context) {
   if (event.httpMethod !== "POST") {
@@ -42,10 +45,10 @@ export async function handler(event, context) {
       body: JSON.stringify({ success: true, message: "Message sent successfully!" }),
     };
   } catch (error) {
-    console.error("Email send error:", error);
+    console.error("Email(Netlify) send error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ success: false, message: "Server Error. Could not send email." }),
+      body: JSON.stringify({ success: false, message: "Server Error. Could not send email(Netlify)." }),
     };
   }
 }

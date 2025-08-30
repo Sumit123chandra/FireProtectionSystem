@@ -51,9 +51,9 @@ export async function POST(req) {
 
     return NextResponse.json({ success: true, data: newMessage });
   } catch (error) {
-    console.error("Error in contact route:", error);
+    console.error("Error in contact route(Vercel):", error);
     return NextResponse.json(
-      { success: false, error: "Failed to send message" },
+      { success: false, error: "Failed to send message(Vercel)" },
       { status: 500 }
     );
   }
