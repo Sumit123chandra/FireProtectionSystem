@@ -13,6 +13,9 @@ export default function Footer() {
           <p className="text-gray-400">
             Reliable fire safety solutions for residential, commercial, and industrial sectors.
           </p>
+          <p className="text-gray-300">
+            Udyam Registration ID: <span className="font-medium text-white">UDYAM-DL-10-0098808</span>
+          </p>
         </div>
 
         {/* Quick Links */}
