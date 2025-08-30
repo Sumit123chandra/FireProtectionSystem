@@ -18,6 +18,13 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
+// 👇 Decide Pay Now redirect
+  const payNowLink =
+    process.env.NEXT_PUBLIC_HOSTING === "vercel"
+      ? "https://fireprotection.netlify.app/payment" // force redirect to Netlify
+      : "/payment"; // local or Netlify stays inside
+
+
   return (
     <nav className="bg-red-700 text-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
@@ -34,7 +41,7 @@ export default function Navbar() {
 
         {/* Pay Now button */}
         <Link
-          href="/payment"
+          href={payNowLink}
           className="bg-white text-red-700 px-4 py-1 rounded hover:bg-gray-200 font-semibold"
         >
           Pay Now
