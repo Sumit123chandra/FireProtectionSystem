@@ -66,6 +66,28 @@ import Contact from "../../src/models/Contact.js";
 import { dbConnect } from "../../src/lib/dbConnect.js";
 
 export async function handler(event, context) {
+    // ✅ Handle DELETE (Remove one message)
+    if (event.httpMethod === "DELETE") {
+    try {
+      const id = event.queryStringParameters.id; // /contact?id=123
+      await dbConnect();
+      await Contact.findByIdAndDelete(id);
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ success: true }),
+      };
+    } catch (error) {
+      console.error("Netlify DELETE error:", error);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ success: false, message: "Failed to delete" }),
+      };
+    }
+  }
+
+
+
   // ✅ Handle POST (Save + Email)
   if (event.httpMethod === "POST") {
     try {
